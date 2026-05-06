@@ -191,7 +191,7 @@ class Program
         Item itemPolymorphic = komik1;  
         itemPolymorphic.Deskripsi();    
 
-        Console.ReadKey();
+        
         
 
     }
