@@ -132,7 +132,7 @@ class MajalahTeknologi : Majalah
 
 class Perpustakaan
 {
-    private List<Item> daftarItem = new List<Item>();
+    public List<Item> daftarItem = new List<Item>();
 
     public void TambahItem(Item item)
     {
@@ -162,6 +162,8 @@ class Program
         Komik komik1 = new Komik("Pit Stop Panic", 2025, "Stephanie");
         MajalahAnak majalahAnak = new MajalahAnak("HI5", 2023, 14);
         MajalahTeknologi majalahTekno = new MajalahTeknologi("AeroTech Racing", 2000, 10);
+        Majalah majalah1 = new Majalah("Gilmore", 2001, 11);
+        Buku buku1 = new Buku("Princess and Her Prince", 2000, "Orlunee");
 
         Console.WriteLine("=== MENAMBAHKAN ITEM ===");
         perpus.TambahItem(novel1);
@@ -173,26 +175,37 @@ class Program
 
         Console.WriteLine("\n=== SOAL 1: Method Deskripsi() pada Novel dan Majalah ===");
         novel1.Deskripsi();
-        majalahTekno.Deskripsi();
-        majalahAnak.Deskripsi();
+        majalah1.Deskripsi();
 
         Console.WriteLine("\n=== SOAL 2: Method BacaSinopsis() pada objek Novel ===");
         novel1.BacaSinopsis();
 
         Console.WriteLine("\n=== SOAL 3: Menampilkan informasi lengkap (judul, tahun, penulis) dari objek Novel ===");
-        Console.WriteLine($"Judul  : {novel1.Judul}");
-        Console.WriteLine($"Tahun  : {novel1.Tahun}");
-        Console.WriteLine($"Penulis: {novel1.Penulis}");
+        novel1.Deskripsi();
 
         Console.WriteLine("\n=== SOAL 4: Method TopikTeknologi() pada objek MajalahTeknologi ===");
         majalahTekno.TopikTeknologi();
 
         Console.WriteLine("\n=== SOAL 5: Variabel Item diisi dengan objek Komik ===");
         Item itemPolymorphic = komik1;  
-        itemPolymorphic.Deskripsi();    
+        itemPolymorphic.Deskripsi();
 
-        
-        
+
+        Console.WriteLine("\n=============== Polymorphism ===============");
+        buku1.Deskripsi();
+        majalah1.Deskripsi();
+        novel1.Deskripsi();
+        komik1.Deskripsi();
+        majalahAnak.Deskripsi();
+        majalahTekno.Deskripsi();
+
+        Console.WriteLine("\n=============== Method Khusus ===============");
+        buku1.CekPenulis();
+        majalah1.InfoEdisi();
+        novel1.BacaSinopsis();
+        komik1.TampilkanIlustrasi();
+        majalahAnak.KategoriAnak();
+        majalahTekno.TopikTeknologi();
 
     }
 }
